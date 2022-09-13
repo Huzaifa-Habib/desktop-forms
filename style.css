@@ -244,13 +244,14 @@ label{
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(40vw);
     
 }
 
 .sign-in-btn{
-    margin-left: auto;
-    margin-right: auto;
-    width: calc(15vw);
+    
     margin-top: 50px;
 
 }
@@ -271,6 +272,90 @@ label{
     
 
 }
+
+@media screen and (max-width:960px) {
+    .sign-in-btn button{
+        width: 100%;
+    }
+    
+}
+
+
+
+
+@media screen and (max-width:760px) {
+    .sign-up-btn button{
+        width: 40%;
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+    .sign-up{
+        margin-left: 10px;
+        margin-right: 0px;
+        width: calc(100vw);
+    }
+
+    .sign-in{
+        width: calc(90vw);
+       
+
+
+    }
+
+    .male{
+        width: 40%;
+    }
+
+    .female{
+        width: 40%;
+    }
+    
+}
+
+@media screen and (max-width:420px) {
+    
+    .male{
+        width: 40%;
+    }
+
+    .female{
+        width: 40%;
+    }
+
+
+    .dob input{
+        width: 100% !important;
+
+    }
+
+    #phone, #postal{
+        width: 90% !important;
+    }
+
+    #name, #email, #pwd, #confpwd, #addre{
+        width: 100% !important;
+       
+    
+    
+    }
+
+    .sign-up-btn button{
+        width: 50%;
+    }
+
+    .sign-up div{
+        margin-top: 20px;
+        margin-left: 5px;
+    }
+    
+    
+
+   
+    
+}
+
 
 
 

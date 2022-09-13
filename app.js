@@ -360,7 +360,8 @@ function signInF() {
        }
 
        else{
-        alert("All Good!")
+        var link = document.getElementById("link");
+        link.setAttribute("href", ".//dashboard/dashboard.html");
        }
 
 
