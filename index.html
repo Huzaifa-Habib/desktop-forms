@@ -6,63 +6,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AmagiTech/JSLoader/amagiloader.js"></script>
     <link rel="stylesheet" href="./style.css">
     <title>Forms</title>
 </head>
 <body>
     <div class="main-cont">
-        <div class="sign-up">
+        <div class="sign-up" id="signUp">
             <h1 class="reg">Register Yourself</h1>
 
-            <div class="user-name">
-                <input type="text" placeholder="Enter Your User Name">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="username" maxlength="40">
+                <label for="email">User name</label>
+                <p id="emptyError">Input cannot be empty!</p>
+                <p id="lengthError">Your name must contain more than 3 characters!</p>
+                <p id="spaceError">Double spaces not allowed</p>
+              </div>
+              
+              <div class="form-floating mt-3 mb-3">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                <label for="email">Email</label>
+                <p id="emailError">Invalid Email!</p>
+              </div>
+
+
+             <div class="form-floating mt-3 mb-3">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="passw">
+                <label for="pwd">Password</label>
+                <img src="./assets/709612.png" alt="" onClick="dis()" height="20" width="20" class="eye"/>
+                <p id="passError">No double spaces allowed! </p>
+             </div>
+
+
+             <div class="form-floating mt-3 mb-3">
+                <input type="password" class="form-control" id="confpwd" placeholder="Re-type Password" name="passw">
+                <label for="pwd">Re-type Password</label>
+
+                <p id="confirmation">Password not matched!</p>
+             </div>
+
+             <div class="form-floating mt-3 mb-3">
+                <input type="text" class="form-control" id="addre" placeholder="Enter Your Address" name="passw">
+                <label for="address">Address</label>
+             </div>
+
+
+            <div class="dob">
+                <h3>Date Of Birth</h3>
+
+                <input type="date" id="date" name="datemin" min="1950-01-02" max="2030-01-01">
             </div>
 
-            <div class="email">
-                <input type="email" placeholder="Enter Your Email">
-            </div>
 
-            <div class="password">
-                <input type="password" placeholder="Enter Your Password">
-            </div>
+                <div class="gender">
+                    <div class="male" id="male">
+                        <p>MAle</p>
 
-            <div class="conf-password">
-                <input type="password" placeholder="Confirm Your Password">
-            </div>
+                    </div>
 
-            
-            <div class="address">
-                <input type="text" placeholder="Enter your Address">
-            </div>
+                    <div class="female" id="female">
+                        <p>female</p>
 
-             
-            <div class="gender">
-                <h4>Select your gender</h4>
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="html">Male</label>
+                    </div>
 
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="html">Female</label> 
+
             </div>
 
             <div class="picture">
-                <h4>Select your profile picture</h4>
+                <h3>Choose your profile picture</h3>
                 <input type="file"id="avatar" name="avatar" accept="image/png, image/jpeg">
             </div>
 
-            <div class="number">
-                <h4>Select your profile picture</h4>
-                <input type="number" placeholder="Enter Your number">
+            <div class="form-floating mt-3 mb-3">
+                <input type="number" class="form-control" id="phone" placeholder="Phone Number" name="phone">
+
+                <label for="number">Phone Number</label>
+                <p id="correctNoError">Your number should start with 0 and 3!</p>
+                <p id="noLengthError">Your Number must contain 11 digits only!</p>
+             </div>
+
+             <div class="form-floating mt-3 mb-3">
+                <input type="number" class="form-control" id="postal" placeholder="Postal code" name="postal">
+
+                <label for="number">Postal Code</label>
+                <p id="postalLengthError">Postal Code must contain five digits only!</p>
+             </div>
+
+           
+
+            <div class="sign-up-btn">
+                <button  onClick="signUpF()" id="signUp">Sign Up</button>
+
             </div>
 
-            <div class="postal">
-                <input type="number" placeholder="Enter Your Postal" maxlength="5">
+
+           
+
+            
+
+        </div>
+        <!-- End Of Sign Up -->
+
+        <div class="sign-in" id="signIn">
+            <h1>Sign in</h1>
+
+            <div class="form-floating mb-3 mt-3">
+                <input type="email" class="form-control" id="userGmail" placeholder="Enter email" name="username" onBlur = "sameG()" >
+                <label for="email">Email</label>
+                <p id="error1">Invalid Email</p>
+
+               
             </div>
 
+            
+            <div class="form-floating mt-3 mb-3">
+                <input type="password" class="form-control" id="Userpwd" placeholder="Enter Password" name="passw" onBlur="sameP()"  >
+                <label for="pwd">Password</label>
+                <p id="error1P">Invalid Password</p>
+
+             </div>
+
+             <div class="sign-in-btn" onClick = "signInF()">
+              <a href="./dashboard/dashboard.html"><button>Log In</button></a>
+
+             </div>
+
+             <div class="register">
+                <p onClick="signUpForm()">Didn't have an account?Register</p>
+
+             </div>
 
         </div>
 
+
+
     </div>
+
+    
     
 
 
