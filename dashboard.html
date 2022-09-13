@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <title>DashBoard</title>
+</head>
+<body>
+    <div class="main">
+        <div class="info-div" id="info">
+            <div id="modal">
+                <p id="close" onClick = "closeM()">X</p>
+                <h1>User Information</h1>
+
+                <div class="user-email">
+                    <div class="user">
+                        <p>Full name</p>
+                         <input type="text" readonly id="userName">
+                    </div>
+
+                    <div class="email">
+                        <p>Email Address</p>
+                        <input type="text" readonly id="gmail">
+
+                     </div>
+
+                </div>
+
+                <div class="address">
+                    <p>Address</p>
+                    <input type="text" readonly id="address">
+                </div>
+
+                <div class="pass-dob">
+                    <div class="pass">
+                        <p>Password</p>
+                        <input type="text" readonly id="pass">
+                    </div>
+
+                    <div class="dob">
+                        <p>Date Of Birth</p>
+                        <input type="text" readonly id="dob">
+                    </div>
+
+                </div>
+
+                <div class="zip-phone">
+                    <div class="zip">
+                        <p>Postal Code</p>
+                        <input type="text" readonly id="postal">
+                    </div>
+
+                    <div class="phone">
+                        <p>Phone Number</p>
+                        <input type="text" readonly id="phone">
+
+
+
+                    </div>
+
+                </div>
+              
+            </div>
+
+
+        </div>
+        <div class="navbar">
+            <div class="logo">
+                <h3>LOGO</h3>
+            </div>
+
+            <div class="menu">
+                <img src="../assets/ham.png" alt="" height="40" width="40" onClick = "p()" style="cursor: pointer;">
+
+                
+
+            </div>
+
+
+        </div>
+        <div class="drop-down" id="drop">
+            <p id="pro" onClick = "modalF()">Profile</p>
+            
+           <a onClick = "main()" id="j"> <p>Log Out</p></a>
+
+        </div>
+
+    </div>
+    
+
+    <script src="./dash.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.24);
+    overflow: hidden;
+
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    width: calc(100vw);
+    height: calc(10vh);
+    background-color: teal;
+    color: white;
+}
+
+.menu{
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: auto ;
+    margin-bottom: auto;
+}
+
+.info-div{
+    width: calc(100vw);
+    height: calc(100vh);
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: none;
+    overflow: scroll;
+
+
+}
+#modal{
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(60vw);
+    background-color: white;
+    margin-top: 40px;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+#modal h1{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    color: hotpink;
+}
+
+.avatar{
+    height: 500px;
+    width: 500px;
+}
+
+.user-email{
+    display: flex;
+    flex-direction: row;
+    line-height: 1px;
+}
+
+.user-email div{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.user-email div p{
+    color: rgba(128, 128, 128, 0.747);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.user-email input{
+    padding: 7px 50px;
+    border-radius: 5px;
+    border: 3px solid dodgerblue;
+    outline: none;
+}
+
+.address{
+    line-height: 1px;
+    margin-left: 25px;
+    margin-top: 30px;
+
+}
+
+
+.address input{
+    padding: 7px 50px;
+    border-radius: 5px;
+    border: 3px solid dodgerblue;
+    outline: none;
+    width: 70%;
+
+}
+
+.address p{
+    color: rgba(128, 128, 128, 0.747);
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+.pass-dob{
+    display: flex;
+    flex-direction: row;
+    line-height: 1px;
+    margin-top: 30px;
+
+}
+
+.pass-dob div{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pass-dob input{
+    padding: 7px 50px;
+    border-radius: 5px;
+    border: 3px solid dodgerblue;
+    outline: none;
+
+}
+
+.pass-dob p{
+    color: rgba(128, 128, 128, 0.747);
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+.zip-phone{
+    display: flex;
+    flex-direction: row;
+    line-height: 1px;
+    margin-top: 30px;
+}
+
+.zip-phone div{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.zip-phone input{
+    padding: 7px 50px;
+    border-radius: 5px;
+    border: 3px solid dodgerblue;
+    outline: none;
+
+}
+
+.zip-phone p{
+    color: rgba(128, 128, 128, 0.747);
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+input{
+    font-weight: 600;
+    color:indigo;
+}
+
+#close{
+    float: right;
+    margin-right: 20px;
+    background-color: red;
+    border-radius: 50%;
+    padding:3px 8px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+
+}
+
+.drop-down{
+    background-color: white;
+    box-shadow: 5px 10px 8px #888888;
+    width: calc(15vw);
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: crimson;
+    margin-right: 10px;
+    
+    
+}
+
+.drop-down p{
+    cursor: pointer;
+}
+
+@media screen and (max-width:960px) {
+    #modal{
+        width: calc(80vw);
+    }
+
+    .address{
+        margin-left: 50px;
+       
+    }
+    
+}
+
+@media screen and (max-width:730px) {
+    .user-email{
+        flex-direction: column;
+        margin-top: 0px;
+       
+    }
+
+    .user-email div{
+        margin-left: 10px;
+        margin-right: 0px; 
+
+    }
+    .user-email input{
+        width: 50%;
+
+
+    }
+
+    .address{
+        margin-left: 10px;
+        margin-top: 0px;
+        width: 70%;
+    }
+
+    .pass-dob{
+        flex-direction: column;
+        margin-top: 0px;
+
+    }
+    .pass-dob div{
+        margin-left: 10px;
+        margin-right: 0px; 
+
+    }
+
+    .pass-dob input{
+        width: 50%;
+
+    }
+
+    .zip-phone{
+        flex-direction: column;
+        margin-top: 0px;
+
+    }
+
+    .zip-phone div{
+        margin-left: 10px;
+        margin-right: 0px; 
+
+
+    }
+
+    .zip-phone input{
+        width: 50%;
+
+
+    }
+
+   
+
+    
+}
+
+@media screen and (max-width:540px) {
+    #modal h1{
+        font-size: 20px;
+    }
+
+    input{
+        width: calc(40vw) !important;
+    }
+
+    .drop-down{
+        width: calc(25vw);
+    }
+    
+}
+
+@media screen and (max-width:400px) {
+    #modal h1{
+        font-size: 15px;
+    }
+
+    input{
+        width: calc(30vw) !important;
+    }
+
+    .drop-down{
+        width: calc(30vw);
+    }
+    
+    
+}
+
