@@ -283,8 +283,8 @@ function signUpF() {
         AmagiLoader.hide();
     }, 3000);
        
-        signUp.style.display = "none"
-        signIn.style.display = "block"
+        // signUp.style.display = "none"
+        // signIn.style.display = "block"
         signIn.animate([   
             // { transform: 'translateY(660px)'},
             { transform: 'translateY(-200px)'},
@@ -350,11 +350,10 @@ error1P.style.display = "none"
 function signInF() {
     var get = window.localStorage.getItem('userData');
     var object = JSON.parse(window.localStorage.getItem('userData'));
-    console.log(get)
     for (var key in object) {
-       console.log( object[key].userGmail)
+       console.log( "addas"+object[key].userGmail)
 
-       if(saveGmail.value !== object[key].userGmail && savePaw.value !== object[key].userPass  ) {
+       if(saveGmail.value !== object[key].userGmail || savePaw.value !== object[key].userPass  ) {
             error1.style.display = "block"
             error1P.style.display = "block"
        }
@@ -362,6 +361,7 @@ function signInF() {
        else{
         var link = document.getElementById("link");
         link.setAttribute("href", ".//dashboard/dashboard.html");
+       
        }
 
 
@@ -373,5 +373,3 @@ function signInF() {
 
     
 }
-
-
