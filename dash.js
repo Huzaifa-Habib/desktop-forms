@@ -69,7 +69,8 @@ function closeM(){
 function main() {
    var k = document.getElementById("j")
    k.setAttribute("href", "../index.html")
-   window.localStorage.clear();
+    var object = JSON.parse(window.localStorage.getItem('userData'));
+    
 }
 
 
@@ -82,33 +83,6 @@ function main() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// var img = JSON.stringify(object[key].userPic);
-// var newPath = img.replace(/^C:\\fakepath\\/, "");
-// console.log(newPath);
-
-// var modal = document.getElementById("modal");
-
-// var imgDiv = document.createElement("div");
-// var imgDivImage = document.createElement("img");
-// imgDivImage.setAttribute("href", newPath)
-// imgDivImage.setAttribute("id", "avatar")
-
-
-
-// modal.appendChild(imgDiv);
-// imgDiv.appendChild(imgDivImage);
 
 
 
