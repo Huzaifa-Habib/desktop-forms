@@ -7,6 +7,12 @@ var signIn = document.getElementById("signIn");
 function signUpForm() {
     signIn.style.display = "none";
     signUp.style.display = "block"
+    saveGmail.value = "";
+    savePaw.value = "";
+    
+error1.style.display = "none"
+error1P.style.display = "none"
+
 
     signUp.animate([   
         // { transform: 'translateY(660px)'},
@@ -58,6 +64,7 @@ var numberError = document.getElementById("correctNoError");
 var numberLengthError = document.getElementById("noLengthError");
 var pLError = document.getElementById("postalLengthError")
 var passError = document.getElementById("passError")
+var existGmailError = document.getElementById("existGmailError")
 
 
 
@@ -73,8 +80,9 @@ numberError .style.display = "none"
 numberLengthError .style.display = "none"
 pLError .style.display = "none"
 passError .style.display = "none"
+existGmailError.style.display = "none"
 
-function Data(userGmail, userPass, userName, userAddress, userDOB, userPic, userNo, userCode) {
+function Data(userGmail, userPass, userName, userAddress, userDOB, userPic, userNo, userCode,logInUser,seatsBooked) {
     this.userGmail = userGmail;
     this.userPass = userPass;
     this.userData = userName;
@@ -83,6 +91,8 @@ function Data(userGmail, userPass, userName, userAddress, userDOB, userPic, user
     this.userPic = userPic;
     this.userNo = userNo;
     this.userCode = userCode;
+    this.logInUser = logInUser
+    this.seatsBooked = seatsBooked
 
 }
 
@@ -140,8 +150,26 @@ function emaila() {
         emailError.style.display = "block"
         emptyError.style.display = "none"
     }
+
+  
+
+    var object = JSON.parse(window.localStorage.getItem('userData'));
+    for (var key in object) {
+       if (gmail.value === object[key].userGmail){
+            existGmailError.style.display="block"
+
+        }
+        else{
+            existGmailError.style.display="none"
+
+        }
+
+
+    }
+
    
 }
+
 function password() {
     var incorrectPass= /\s{2}/.test(pass.value)
 
@@ -262,9 +290,14 @@ function correctPostal() {
 }
 
 var signUp = document.getElementById("signUp");
+let getPrevData =JSON.parse(window.localStorage.getItem('userData'));
 
 function signUpF() {
-    if (emptyError.style.display === "block" || lengthError.style.display === "block" || spaceError.style.display === "block" || emailError.style.display === "block" || confirmation.style.display === "block" || numberError.style.display === "block" || numberLengthError.style.display === "block" || pLError.style.display === "block"  ) {
+    
+
+
+
+    if (emptyError.style.display === "block" || lengthError.style.display === "block" || spaceError.style.display === "block" || emailError.style.display === "block" || confirmation.style.display === "block" || numberError.style.display === "block" || numberLengthError.style.display === "block" || pLError.style.display === "block" || existGmailError.style.display==="block"  ) {
         alert("Something Wrong or missing above")
     }
 
@@ -277,14 +310,21 @@ function signUpF() {
         alert("Please Select Gender")
     }
 
+
     else {
+        if(getPrevData) {
+            userData.push(... getPrevData)    
+        }
+
+
+
         AmagiLoader.show();
          setTimeout(() => {
         AmagiLoader.hide();
     }, 3000);
        
-        // signUp.style.display = "none"
-        // signIn.style.display = "block"
+        signUp.style.display = "none"
+        signIn.style.display = "block"
         signIn.animate([   
             // { transform: 'translateY(660px)'},
             { transform: 'translateY(-200px)'},
@@ -293,7 +333,7 @@ function signUpF() {
             duration: 1500
         });
 
-        var data = new Data(gmail.value, pass.value,userName.value,address.value, dob.value, pic.value, phoneNo.value, postal.value)
+        var data = new Data(gmail.value, pass.value,userName.value,address.value, dob.value, pic.value, phoneNo.value, postal.value, false, false)
         userData.push(data)
         var string =JSON.stringify(userData)
         window.localStorage.setItem("userData", string);
@@ -330,6 +370,20 @@ function signUpF() {
    
 }
 
+function already(){
+    signUp.style.display = "none"
+    signIn.style.display = "block"
+    signIn.animate([   
+        // { transform: 'translateY(660px)'},
+        { transform: 'translateY(-200px)'},
+        {transition: '2s'}
+    ],{
+        duration: 1500
+    });
+
+}
+
+
 // Sign in validation
 
 var saveGmail = document.getElementById("userGmail")
@@ -355,21 +409,40 @@ function signInF() {
 
        if(saveGmail.value !== object[key].userGmail || savePaw.value !== object[key].userPass  ) {
             error1.style.display = "block"
-            error1P.style.display = "block"
+            error1P.style.display = "block"  
+                     
        }
 
+    
+
        else{
+        let getPrevData =JSON.parse(window.localStorage.getItem('userData'));
+        for(var key in getPrevData){
+            if(getPrevData[key].userGmail === saveGmail.value){
+                getPrevData[key].logInUser = true
+                console.log(getPrevData[key])
+                localStorage.setItem('userData',JSON.stringify(getPrevData))
+
+                
+            }
+            
+        }
+
         var link = document.getElementById("link");
         link.setAttribute("href", ".//dashboard/dashboard.html");
        
        }
-
-
-
-
-       
+     
         
     }
 
     
 }
+
+
+
+
+// localStorage.clear()
+
+
+

@@ -34,7 +34,7 @@ body{
     overflow: hidden;
     overflow-y: scroll;
     height: calc(100vh);
-    display: none;
+    /* display: none; */
     
 
 }
@@ -173,7 +173,7 @@ label{
 }
 
 
-#emptyError, #lengthError, #spaceError, #emailError, #confirmation, #correctNoError, #noLengthError, #postalLengthError, #passError{
+#emptyError, #lengthError, #spaceError, #emailError, #confirmation, #correctNoError, #noLengthError, #postalLengthError, #passError, #existGmailError{
     font-family: monospace;
     color: red;
     font-size: 14px;
@@ -211,7 +211,7 @@ label{
 	padding: 0 50px;
     margin-top: 100px;
     padding-bottom: 40px;
-    /* display: none; */
+    display: none;
      
    
 }
