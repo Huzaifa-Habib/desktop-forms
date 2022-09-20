@@ -223,7 +223,7 @@ input{
   
    body .container {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -332,11 +332,11 @@ input{
     background: #fff;
     color: #000;
   }
-  
+/*   
   .row1 , .row2{
     display: flex;
     flex-direction: row;
-  }
+  } */
 
   .main-body{
     overflow-y: scroll;

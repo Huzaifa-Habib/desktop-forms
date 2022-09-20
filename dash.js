@@ -69,7 +69,19 @@ function closeM(){
 function main() {
    var k = document.getElementById("j")
    k.setAttribute("href", "../index.html")
-    var object = JSON.parse(window.localStorage.getItem('userData'));
+   var object = JSON.parse(window.localStorage.getItem('userData'));
+
+   let getPrevData =JSON.parse(window.localStorage.getItem('userData'));
+   for(var key in getPrevData){
+       if(  getPrevData[key].logInUser  === true){
+           getPrevData[key].logInUser = false
+           console.log(getPrevData[key])
+           localStorage.setItem('userData',JSON.stringify(getPrevData))
+
+           
+       }
+       
+   }
     
 }
 
